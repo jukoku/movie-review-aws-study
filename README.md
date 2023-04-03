@@ -1,12 +1,12 @@
 ### 이 앱은 Docker 컨테이너에서 실행되도록 코딩되었다. 
 
 ### 컨테이너 실행
-> docker run -d -p 5000:3000 -it --network net-01 --name node_app -v /mnt/c/Users/jinho/Documents/Projects/webDevelop/node-study:/app node:18.15.0
+> docker run -d -p 3000:3000 -it --network net-01 --name node_app -v /mnt/c/Users/jinho/Documents/Projects/webDevelop/node-study:/app node:18.15.0
 
 ### 컨테이너 쉘 접속
 > docker exec -it node_app /bin/bash
 > docker exec -it mysql-db /bin/bash
-> docker exec -it node-study-app-1 /bin/bash
+> docker exec -it node_study /bin/bash
 
 ### 네트워크 생성
 > docker network create [네트워크 이름]

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../model/db');
+const path = require('path');
 
 const cheerio = require('cheerio');
 const axios = require('axios');
@@ -8,6 +9,11 @@ const iconv = require('iconv-lite');
 
 // 크롤링할 사이트
 const url = "https://finance.naver.com/sise/sise_quant.naver";
+
+// 사이트맵 추가
+router.get("/sitemap.xml", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/sitemap.xml"));
+})
 
 
 router.get("/excel", function (req, res) {

@@ -1,7 +1,10 @@
+require('dotenv').config()
 var Sequelize = require("sequelize");
 var sequelize;
-sequelize = new Sequelize("nodeStudy", "root", "test123", {
-  host: "db",
+
+// new Sequelize('database', 'username', 'password',
+sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, process.env.DB_PASSWORD, {
+  host: process.env.DB_HOST,
   port: 3306,
   dialect: "mysql",
   timezone: "+09:00",
