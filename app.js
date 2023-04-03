@@ -15,7 +15,7 @@ app.use(express.urlencoded());
 const mainRouter = require('./router/mainRouter')
 app.use('/', mainRouter)
 
-app.listen(3000, function (req, res) {
+app.listen(80, function (req, res) {
     db.sequelize.sync({ force: false })
     console.log("서버가 실행되고 있다!");
 })
